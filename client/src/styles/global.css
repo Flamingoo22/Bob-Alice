@@ -57,7 +57,8 @@
     top: 300px;
     left: 5%;
     font-size: 13px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    z-index: -1;
 }
 
 .product-desc-price {
@@ -97,37 +98,10 @@
     gap: 10px;
     margin: 40px;
     color: #324d67;
-    z-index: -2;
 }
 
-@media screen and (max-width: 800px) {
-    .product-detail-container {
-        display: flex;
-        flex-direction: column;
-        /* justify-content: space-around; */
-        gap: 10px;
-        margin: 40px;
-        color: #324d67;
-    }
-    .product-desc {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        position: fixed;
-        top: 600px;
-        left: 5%;
-        font-size: 13px;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-    }
-    .cart-container {
-        height: 100vh;
-        width: 800px;
-        background-color: white;
-        float: right;
-        padding: 40px 40px;
-        position: relative;
-        z-index: 100;
-    }
+.product-detail-img {
+    z-index: -2;
 }
 
 .product-detail {
@@ -365,4 +339,35 @@
     background-color:rgb(232,240,254) ;
     border: 1px solid rgba(60, 60, 60, 0.667);
     padding-left: 10px;
+}
+
+
+@media screen and (max-width: 800px) {
+    .product-detail-container {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-around; */
+        gap: 10px;
+        margin: 40px;
+        color: #324d67;
+    }
+    .product-desc {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 600px;
+        left: 5%;
+        font-size: 13px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    }
+    .cart-container {
+        height: 100vh;
+        width: 100vw;
+        background-color: white;
+        float: right;
+        padding: 40px 40px;
+        position: relative;
+        z-index: 100;
+    }
 }

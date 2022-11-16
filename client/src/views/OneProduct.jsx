@@ -37,7 +37,7 @@ const OneProduct = (props) => {
     return (
         <div>
             <Navbar />
-            <div className='product-detail-container '>
+            <div className='product-detail-container'>
                 <div className='product-desc'>
                     {
                     product.desc.map((index, i )=>{
@@ -54,7 +54,7 @@ const OneProduct = (props) => {
 
                 {
                     product.url.map((url, index) => {
-                        return <img src={url} key={index} alt={''}/>
+                        return <img src={url} key={index} alt={''} className='product-detail-img'/>
                     })
                 }
 
