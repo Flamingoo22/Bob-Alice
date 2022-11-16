@@ -1,0 +1,368 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    box-sizing: border-box;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+    align-items: center;
+    position:sticky;
+    width: 100vw;
+    top: 0;
+    background-color: #f8f8f88a;
+    margin-bottom: 10px;
+}
+
+.navbar-links-container {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-shopping {
+    background: none;
+    padding: none;
+    border: none;
+    font-size: 0.8em;
+    cursor: pointer;
+    font-family:Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+
+.links {
+    text-decoration: none;    
+    color: rgb(34, 33, 33);
+    font-size: 0.8em;
+    cursor: pointer;
+    font-family:Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+
+.logo-header {
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #010202;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/*  view port height */
+.product-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 300px;
+    left: 5%;
+    font-size: 13px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.product-desc-price {
+    font-size: 13px;
+}
+
+.product-desc-header {
+    text-align: left;
+    inline-size: 400px;
+    overflow-wrap: break-word; 
+    font-family: Optima, sans-serif;
+}
+
+
+
+.add-to-cart {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: rgb(0, 0, 0);
+    color: #f8f8f8;
+    cursor: pointer;
+    width: 300px;
+    transform: scale(1, 1);
+    font-size: 1em;
+    transition: transform 0.5s ease;
+}
+
+.select-size {
+    width: 300px;
+    height: 40px;
+}
+
+.product-detail-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin: 40px;
+    color: #324d67;
+    z-index: -2;
+}
+
+@media screen and (max-width: 800px) {
+    .product-detail-container {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-around; */
+        gap: 10px;
+        margin: 40px;
+        color: #324d67;
+    }
+    .product-desc {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 600px;
+        left: 5%;
+        font-size: 13px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    }
+    .cart-container {
+        height: 100vh;
+        width: 800px;
+        background-color: white;
+        float: right;
+        padding: 40px 40px;
+        position: relative;
+        z-index: 100;
+    }
+}
+
+.product-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    position: fixed;
+    top: 300px;
+    /* right: 5%; */
+    right: 0;
+    z-index: -1;
+}
+
+.cart-wrapper {
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.5);
+    position: -webkit-fixed;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    transition: all 1s ease-in-out;
+}
+
+.cart-container {
+    height: 100vh;
+    width: 650px;
+    background-color: white;
+    float: right;
+    padding: 40px 40px;
+    position: relative;
+    z-index: 100;
+}
+
+.cart-heading {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    background-color: transparent;
+    margin-bottom: 50px;
+}
+
+.cart-heading * {
+    font-family:Courier New, monospace;
+    font-size:.8rem;
+    color: grey;
+    font-weight: 100;
+}
+
+.cart-items {
+    overflow-y: scroll;
+    height: 70vh;
+    margin-bottom: 30px;
+}
+.cart-checkout-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: rgb(0, 0, 0);
+    color: #f8f8f8;
+    cursor: pointer;
+    width: 100%;
+    font-size: .8em;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+.empty-cart-message{
+    font-size: 13px;
+    font-family:Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-weight: 100;
+    color: #00000097;
+}
+.checkout-wrapper {
+    padding: 0 17%;
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;
+}
+
+.checkout-cart{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* grid-auto-rows: minmax(100px, auto); */
+}
+
+.checkout-heading{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(20, 1fr);
+    border-bottom:1px solid #61737386;
+    padding-bottom: 10px;
+    margin-top: 2em;
+}
+
+.checkout-heading h5{
+    font-size: 13px;
+    font-family:Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-weight: 100;
+    color: #00000097;
+}
+
+.checkout-heading h5:nth-child(1){
+    margin-left: 8rem;
+    grid-row: 1;
+    white-space: nowrap;
+}
+
+.checkout-heading h5:nth-child(2){
+    grid-column-end: -1;
+    grid-row: 1;
+}
+
+.checkout-product-wrapper{
+    padding: 20px 0;
+    border-bottom:1px solid #61737386;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.checkout-product-desc {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(7, 18px);
+    box-sizing: content-box;
+}
+
+.checkout-product-img {
+    height:200px ;
+    width: 120px;
+    border: 1px solid rgba(0, 0, 0, 0.042);
+    margin-right: 5px;
+}
+
+.checkout-product-name {
+    grid-column: 1;
+    white-space: wrap;
+    text-align: left;
+    inline-size: 300px;
+    overflow: visible;
+    font-size: 15px;
+    font-family:Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-weight: 100;
+    grid-row: 1;
+    color: #000000ea;
+}
+.checkout-product-size {
+    grid-column: 1;
+    grid-row: 3;
+    text-align: left;
+    font-size: 16px;
+    font-family:Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-weight: 100;
+    color: #00000097;
+}
+.checkout-product-price {
+    grid-column: -1;
+    grid-row: 1;
+    font-size: 16px;
+    font-family:Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-weight: 100;
+    color: #00000097;
+}
+.checkout-product-remove {
+    grid-column: -1;
+    grid-row: -1;
+    background: none;
+    padding: none;
+    border: none;
+    font-size: 0.8em;
+    font-size: 16px;
+    cursor: pointer;
+    font-family:Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+.checkout-bottom{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(20, 1fr);
+    padding-bottom: 10px;
+}
+
+.checkout-bottom h5{
+    font-size: 13px;
+    font-family:Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-weight: 600;
+    color: #00000097;
+    margin-top: 20px;
+}
+
+.checkout-bottom h5:nth-child(1){
+    margin-left: 8rem;
+    grid-row: 1;
+    white-space: nowrap;
+}
+
+.checkout-bottom h5:nth-child(2){
+    grid-column-end: -1;
+    grid-row: 1;
+    white-space: nowrap;
+}
+
+.checkout-right {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 3em;
+}
+
+.checkout-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: rgb(0, 0, 0);
+    color: #f8f8f8;
+    cursor: pointer;
+    width: 300px;
+    font-size: .8em;
+}
+
+.checkout-email {
+    width: 300px;
+    height: 35px;
+    background-color:rgb(232,240,254) ;
+    border: 1px solid rgba(60, 60, 60, 0.667);
+    padding-left: 10px;
+}
