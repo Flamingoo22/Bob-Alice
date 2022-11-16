@@ -1,6 +1,6 @@
 // == CRUD ==
 //import the model to make queries to the DB
-const Product = require('../models/model.product')
+const Product = require('../models/product.model')
 
 // different methods
 

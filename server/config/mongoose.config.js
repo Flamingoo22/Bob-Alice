@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const db = bob_alice
+const db = "bob_alice"
 
 
 mongoose.connect('mongodb://localhost/' + db, {
