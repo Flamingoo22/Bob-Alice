@@ -1,36 +1,31 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 // import axios from 'axios';
 import Navbar from '../components/Navbar';
 import ProductTable from '../components/ProductTable';
 import { useParams } from 'react-router-dom';
-import { useStateContext } from '../context/StateContext';
+import axios from 'axios';
 
 const Products = () => {
-    const { cat } = useParams();
-    const { products, setProducts } = useStateContext();
+    const { cat } = useParams()
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        // how to set the conditional statement assuming we fetch the data from api above?
+        axios.get('http://localhost:8000/api/product')
+        .then((res) =>{
+            setProducts([...res.data])
+        })
+        .then((res) =>{
+            if(products.length > 0 && cat){
+                const filterProducts = products.filter(product => product.category === cat)
+                setProducts([...filterProducts])
+            }
+        })
+    }, [cat]);
 
-        if(cat){
-            const filterProducts = products.filter(product => product.category === cat)
-            // setProducts([...products.filter(product => product.category === cat)])
-            setProducts(filterProducts)
-        }
-        return () => {
-            
-        };
-    }, [cat, setProducts]);
     return (
         <div>
             <Navbar />
-            {cat
-            ? 
-            <ProductTable products={products} />
-            :
-            <ProductTable products={products} />
-        }
-
+            {products.length > 1 && <ProductTable products={products} />}
         </div>
     )
 }

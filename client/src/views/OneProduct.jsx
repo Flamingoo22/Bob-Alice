@@ -1,41 +1,27 @@
-import React from 'react'
-// import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar';
 import { useStateContext } from '../context/StateContext';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const OneProduct = (props) => {
     const { onAdd } = useStateContext()
+    const { id } = useParams();
+    const [ product, setProduct ] = useState({});
 
-    const product = { 
-        id: 1, 
-        name:'Cartoon And Korean Letter Graphic Drawstring Thermal Lined Hoodie', 
-        price: 14, 
-        desc: [
-        'Cotton fleece hoodie.',
-        '',
-        '· Logo graphic printed at chest',
-        '· Kangaroo pocket',
-        '· Rib knit hem and cuffs',
-        '',
-        'Supplier color: Light brown',
-        '',
-        '100% cotton.',
-        '',
-        'Imported.'], 
-        category: 'menswear',
-        subCategory:'tops', 
-        url:[
-            'https://img.ltwebstatic.com/images3_pi/2021/09/02/16305703126adc14b0ba03889e9ca962a4a25b25d5_thumbnail_600x.webp',
-            'https://img.ltwebstatic.com/images3_pi/2021/09/06/1630905489d1254fbf856073b3f158a470fcf8a4f1_thumbnail_600x.webp',
-            'https://img.ltwebstatic.com/images3_pi/2021/09/02/163057031739c60f9ba2d3f97c3cd83449b7e4f3d6_thumbnail_600x.webp',
-        ]}
+    useEffect(() =>{
+        axios.get('http://localhost:8000/api/product/'+id)
+        .then((res)=>{
+            setProduct(res.data)
+        })
+    })
     const size = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
-    // const id = useParams();
 
     return (
         <div>
+            {JSON.stringify(product.length)}
             <Navbar />
-            <div className='product-detail-container'>
+            {product._id && <div className='product-detail-container'>
                 <div className='product-desc'>
                     {
                     product.desc.map((index, i )=>{
@@ -71,8 +57,9 @@ const OneProduct = (props) => {
                     <button className='add-to-cart' onClick={()=>onAdd(product,1)}>ADD TO CART</button>
                 </div>
             </div>
-            
+            }
         </div>
+                    
     )
 }
 

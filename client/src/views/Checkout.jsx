@@ -20,7 +20,7 @@ const Checkout = () => {
                     {
                         cartItems.map((item, index)=> {
                             return(
-                                <div key={item.id} className='checkout-product-wrapper'>
+                                <div key={item._id} className='checkout-product-wrapper'>
                                     <img src={item.url[0]} className='checkout-product-img'/>
                                     <div className='checkout-product-desc'>
                                         <p className='checkout-product-name'>{item.name}</p>
