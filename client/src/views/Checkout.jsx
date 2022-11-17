@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Navbar from '../components/Navbar'
 import { useStateContext } from '../context/StateContext';
+<<<<<<< HEAD
 import axios from 'axios';
 
 // import { loadStripe } from '@stripe/stripe-js'
@@ -14,6 +15,9 @@ import axios from 'axios';
 //     }
 //     return stripePromise;
 // }
+=======
+import PayButton from '../components/PayButton';
+>>>>>>> 9569de2f60342c8e95cf163b898c98f74054950b
 
 
 const Checkout = () => {
@@ -84,8 +88,14 @@ const Checkout = () => {
                 <h4>CHECKOUT</h4>
                 <div className='checkout-form'>
                     <label >Email Address: </label>
+<<<<<<< HEAD
                     <input type="text" className='checkout-email'/>
                     <input type="submit" value='PROCEED TO CHECKOUT' className='checkout-btn' onClick={redirectToCheckout}/>
+=======
+                        <input type="text" className='checkout-email' />
+                        <PayButton className='checkout-btn' cartItems={cartItems}/>
+                        {/* <input onClick='' type="submit" value='PROCEED TO CHECKOUT' className='checkout-btn'/> */}
+>>>>>>> 9569de2f60342c8e95cf163b898c98f74054950b
                 </div>
             </div>
             </div>

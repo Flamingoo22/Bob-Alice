@@ -19,7 +19,6 @@ function App() {
           </Routes>
       </StateContext>
     </div>
-    //Mike's test comment
   );
 }
 

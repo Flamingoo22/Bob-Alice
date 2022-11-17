@@ -1,22 +1,31 @@
-// const express = require('express');
-const stripe = require('stripe')('sk_test_51M4C6HGAtWYTDy6VpnqbUku9nvhwlhmvPrh9Duq6BoSeVERMsiDoBNNMxluHGqaOcVVBKVKBS0YQsXMQZylKO8bh00BxgBSg1O')
+const express = require("express");
+const Stripe = require("stripe");
+require("dotenv").config();
 
-module.exports = (app) => {
-    app.post('/api/create-checkout-session', async (req, res) => {
-        console.log(req);
-        const session = await stripe.checkout.sessions.create({
+const stripe = Stripe(process.env.STRIPE_KEY)
+
+const router = express.Router();
+
+router.post('/create-checkout-session', async (req, res) => {
+    const session = await stripe.checkout.sessions.create({
         line_items: [
-        {
-            // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-            price: '{{PRICE_ID}}',
-            quantity: 1,
-        },
+            {
+                price_data: {
+                    currency: 'usd',
+                    product_data: {
+                        name: 'T-shirt',
+                    },
+                    unit_amount: 2000,
+                },
+                quantity: 1,
+            },
         ],
         mode: 'payment',
-        success_url: `${YOUR_DOMAIN}?success=true`,
-        cancel_url: `${YOUR_DOMAIN}?canceled=true`,
+        success_url: 'http://localhost:3000/checkout',
+        cancel_url: 'http://localhost:3000/checkout',
     });
 
-    res.redirect(303, session.url);
-    });
-}
+    res.send({ url: session.url });
+});
+
+module.exports = router;
