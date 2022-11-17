@@ -1,58 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import Navbar from '../components/Navbar'
+import { useStateContext } from '../context/StateContext';import React from 'react'
+import Navbar from '../components/Navbar'
 import { useStateContext } from '../context/StateContext';
-<<<<<<< HEAD
-import axios from 'axios';
-
-// import { loadStripe } from '@stripe/stripe-js'
-
-
-// let stripePromise;
-
-// const getStripe = () => {
-//     if (!stripePromise ) {
-//         const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
-//     }
-//     return stripePromise;
-// }
-=======
 import PayButton from '../components/PayButton';
->>>>>>> 9569de2f60342c8e95cf163b898c98f74054950b
 
 
 const Checkout = () => {
     const { cartItems, totalPrice, onRemove } = useStateContext();
-
-    // const item = {
-    //     price : 'price_1M4vQoGAtWYTDy6VDwF6R20k',
-    //     quantity: 1,
-    // };
-
-    // const checkoutOptions = {
-    //     lineItems: [item],
-    //     mode: 'payment',
-    //     successUrl: `${window.location.origin}/success`,
-    //     cancelUrl: `${window.location.origin}/cencel`,
-    // }
-
-    const redirectToCheckout = async () => {
-        // console.log('redirectToCheckOut');
-        // const stripe = await getStripe()
-        // console.log('*************');
-        // console.log(stripe)
-        // const { error } = await stripe.redirectToCheckout(checkoutOptions);
-        // console.log("Stripe Checkout Error:", error);
-        axios.post('http://localhost:8000/create-checkout-session',{
-            cartItems,
-            userId: 123435
-        },
-        // {
-        //     withCredentials:true
-        // }
-        ).then((res)=>{
-            console.log(res)
-        })
-    }
 
     return (
         <div>
@@ -88,14 +43,9 @@ const Checkout = () => {
                 <h4>CHECKOUT</h4>
                 <div className='checkout-form'>
                     <label >Email Address: </label>
-<<<<<<< HEAD
-                    <input type="text" className='checkout-email'/>
-                    <input type="submit" value='PROCEED TO CHECKOUT' className='checkout-btn' onClick={redirectToCheckout}/>
-=======
                         <input type="text" className='checkout-email' />
                         <PayButton className='checkout-btn' cartItems={cartItems}/>
                         {/* <input onClick='' type="submit" value='PROCEED TO CHECKOUT' className='checkout-btn'/> */}
->>>>>>> 9569de2f60342c8e95cf163b898c98f74054950b
                 </div>
             </div>
             </div>
