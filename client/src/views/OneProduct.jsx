@@ -22,14 +22,12 @@ const OneProduct = (props) => {
         '100% cotton.',
         '',
         'Imported.'], 
-        category: 'Menswear',
+        category: 'menswear',
         subCategory:'tops', 
         url:[
-            // 'https://img.ltwebstatic.com/images3_pi/2021/11/19/1637299999d70f155408f66b275c63777686174ecc_thumbnail_600x.webp',
             'https://img.ltwebstatic.com/images3_pi/2021/09/02/16305703126adc14b0ba03889e9ca962a4a25b25d5_thumbnail_600x.webp',
             'https://img.ltwebstatic.com/images3_pi/2021/09/06/1630905489d1254fbf856073b3f158a470fcf8a4f1_thumbnail_600x.webp',
             'https://img.ltwebstatic.com/images3_pi/2021/09/02/163057031739c60f9ba2d3f97c3cd83449b7e4f3d6_thumbnail_600x.webp',
-            // 'https://img.ltwebstatic.com/images3_pi/2021/11/19/1637300001a83d705407d9b9711fe07083f30fba6d_thumbnail_600x.webp'
         ]}
     const size = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
     // const id = useParams();

@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import Navbar from '../components/Navbar'
-import { useStateContext } from '../context/StateContext';import React from 'react'
-import Navbar from '../components/Navbar'
 import { useStateContext } from '../context/StateContext';
 import PayButton from '../components/PayButton';
 
@@ -44,7 +42,7 @@ const Checkout = () => {
                 <div className='checkout-form'>
                     <label >Email Address: </label>
                         <input type="text" className='checkout-email' />
-                        <PayButton className='checkout-btn' cartItems={cartItems}/>
+                        <PayButton cartItems={cartItems}/>
                         {/* <input onClick='' type="submit" value='PROCEED TO CHECKOUT' className='checkout-btn'/> */}
                 </div>
             </div>

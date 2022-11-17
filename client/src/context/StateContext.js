@@ -139,8 +139,3 @@ export const StateContext = ( {children} ) => {
 }
 
 export const useStateContext = () => useContext(Context);
-
-
-['https://img.ltwebstatic.com/images3_pi/2022/06/30/1656587654c70bffadac75ece2d45fcc6fcfeff945_thumbnail_600x.webp',
-'https://img.ltwebstatic.com/images3_pi/2022/06/30/16565876567c62f856e140d7393064e345ea39da70_thumbnail_600x.webp',
-'https://img.ltwebstatic.com/images3_pi/2022/06/30/165658765870e31c37c0c944dd11a2d60326dcc570_thumbnail_600x.webp']
