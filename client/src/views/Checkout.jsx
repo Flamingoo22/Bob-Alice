@@ -1,6 +1,8 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import { useStateContext } from '../context/StateContext';
+import PayButton from '../components/PayButton';
+
 
 const Checkout = () => {
     const { cartItems, totalPrice, onRemove } = useStateContext();
@@ -37,11 +39,12 @@ const Checkout = () => {
                 </div>
             <div className='checkout-right'>
                 <h4>CHECKOUT</h4>
-                <form className='checkout-form'>
+                <div className='checkout-form'>
                     <label >Email Address: </label>
-                    <input type="text" className='checkout-email'/>
-                    <input type="submit" value='PROCEED TO CHECKOUT' className='checkout-btn'/>
-                </form>
+                        <input type="text" className='checkout-email' />
+                        <PayButton className='checkout-btn' cartItems={cartItems}/>
+                        {/* <input onClick='' type="submit" value='PROCEED TO CHECKOUT' className='checkout-btn'/> */}
+                </div>
             </div>
             </div>
         </div>
