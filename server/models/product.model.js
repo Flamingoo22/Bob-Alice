@@ -5,12 +5,9 @@ const mongoose = require('mongoose')
 const ProductSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, '{PATH} must be present'],
-        minlength: [3, '{Path} MUST BE AT LEAST 3 CHARS LONG']
     },
     desc: {
-        type: String,
-        required: [true, '{PATH} must be present'],
+        type: [String],
     },
     price: {
         type: Number
@@ -23,6 +20,9 @@ const ProductSchema = new mongoose.Schema({
     },
     subCategories:{
         type: String,
+    },
+    url: {
+        type: [String],
     }
 
 }, {timestamps: true})//created at and updated at

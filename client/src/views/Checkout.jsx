@@ -42,8 +42,7 @@ const Checkout = () => {
                 <div className='checkout-form'>
                     <label >Email Address: </label>
                         <input type="text" className='checkout-email' />
-                        <PayButton className='checkout-btn' cartItems={cartItems}/>
-                        {/* <input onClick='' type="submit" value='PROCEED TO CHECKOUT' className='checkout-btn'/> */}
+                        <PayButton cartItems={cartItems}/>
                 </div>
             </div>
             </div>
