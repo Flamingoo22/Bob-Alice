@@ -5,14 +5,16 @@ import Product from './Product'
 
 const ProductTable = ({ products }) => {
 
-
     return (
         <div>
             {
                 <Grid container spacing={2}>
                     {
-                        products.map((product)=>{
-                            return <Product product={product} key={product.id}/>
+                        products.map((product, i)=>{
+                            return <Product product={product} 
+                            key={i}
+                            
+                            />
                         })
                     }
                 </Grid>

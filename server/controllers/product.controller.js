@@ -17,6 +17,7 @@ module.exports = {
     
     // CREATE
     create: ( req, res ) =>{
+        console.log(req.body)
         Product.create(req.body)
             .then( newProduct => {
                 res.json(newProduct)
