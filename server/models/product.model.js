@@ -8,6 +8,7 @@ const ProductSchema = new mongoose.Schema({
     },
     desc: {
         type: [String],
+        required: [true, '{PATH} must be present'],
     },
     price: {
         type: Number

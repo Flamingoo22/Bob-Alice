@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Navbar from '../components/Navbar'
 import { useStateContext } from '../context/StateContext';
 import PayButton from '../components/PayButton';
@@ -20,7 +20,7 @@ const Checkout = () => {
                     {
                         cartItems.map((item, index)=> {
                             return(
-                                <div key={item.id} className='checkout-product-wrapper'>
+                                <div key={item._id} className='checkout-product-wrapper'>
                                     <img src={item.url[0]} className='checkout-product-img'/>
                                     <div className='checkout-product-desc'>
                                         <p className='checkout-product-name'>{item.name}</p>
@@ -43,6 +43,7 @@ const Checkout = () => {
                     <label >Email Address: </label>
                         <input type="text" className='checkout-email' />
                         <PayButton cartItems={cartItems}/>
+                        {/* <input onClick='' type="submit" value='PROCEED TO CHECKOUT' className='checkout-btn'/> */}
                 </div>
             </div>
             </div>
