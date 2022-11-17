@@ -5,7 +5,7 @@ import Products from './views/Products';
 import OneProduct from './views/OneProduct';
 import Checkout from './views/Checkout';
 import { StateContext } from './context/StateContext'
-import { Toaster } from 'react-hot-toast'
+import '@stripe/stripe-js'
 
 function App() {
   return (

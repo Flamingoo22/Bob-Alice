@@ -20,7 +20,7 @@ const Products = () => {
         return () => {
             
         };
-    }, [cat, products, setProducts]);
+    }, [cat, setProducts]);
     return (
         <div>
             <Navbar />

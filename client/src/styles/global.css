@@ -16,6 +16,7 @@
     top: 0;
     background-color: #f8f8f88a;
     margin-bottom: 10px;
+    z-index: 1;
 }
 
 .navbar-links-container {
@@ -58,7 +59,6 @@
     left: 5%;
     font-size: 13px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    z-index: -1;
 }
 
 .product-desc-price {
@@ -101,7 +101,7 @@
 }
 
 .product-detail-img {
-    z-index: -2;
+    z-index: -1;
 }
 
 .product-detail {
@@ -113,7 +113,7 @@
     top: 300px;
     /* right: 5%; */
     right: 0;
-    z-index: -1;
+    z-index: 0;
 }
 
 .cart-wrapper {
