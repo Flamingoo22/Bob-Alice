@@ -5,7 +5,7 @@ import { useStateContext } from '../context/StateContext';
 import { Toaster } from 'react-hot-toast'
 
 const Navbar = ( props ) => {
-    const { showCart, setShowCart } = useStateContext()
+    const { showCart, setShowCart, totalQuantities } = useStateContext()
 
     return (
         <div className='navbar-container'>
@@ -24,7 +24,7 @@ const Navbar = ( props ) => {
             </Link>
             
             <button type='button' className='btn-shopping' onClick={()=>setShowCart(true)}>
-                SHOPPING BAG
+                SHOPPING BAG (<span>{totalQuantities}</span>)
             </button>
 
             {showCart && <Cart setShowCart={setShowCart}/>}
