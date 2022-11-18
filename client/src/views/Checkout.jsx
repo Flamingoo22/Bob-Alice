@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import Navbar from '../components/Navbar'
 import { useStateContext } from '../context/StateContext';
 import PayButton from '../components/PayButton';
@@ -22,7 +22,7 @@ const Checkout = () => {
                         cartItems.map((item, index)=> {
                             return(
                                 <div key={item._id} className='checkout-product-wrapper'>
-                                    <img src={item.url[0]} className='checkout-product-img'/>
+                                    <img src={item.url[0]} className='checkout-product-img' alt=''/>
                                     <div className='checkout-product-desc'>
                                         <p className='checkout-product-name'>{item.name}</p>
                                         <div className='checkout-product-size'>

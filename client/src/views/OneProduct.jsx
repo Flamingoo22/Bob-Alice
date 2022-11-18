@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const OneProduct = (props) => {
-    const { onAdd, cartItems } = useStateContext()
+    const { onAdd } = useStateContext()
     const { id } = useParams();
     const [ product, setProduct ] = useState({});
 

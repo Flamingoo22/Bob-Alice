@@ -1,5 +1,4 @@
-import axios from 'axios';
-import React, { useState, createContext, useContext, useEffect } from 'react'
+import React, { useState, createContext, useContext } from 'react'
 import { toast } from 'react-hot-toast';
 
 const Context = createContext();
@@ -9,7 +8,6 @@ export const StateContext = ( {children} ) => {
     const [ cartItems, setCartItems ] = useState([]);
     const [ totalPrice, setTotalPrice ] = useState(0);
     const [ totalQuantities, setTotalQuantities ] = useState(0);
-    const [ qty, setQty] = useState(1);
 
     const onAdd = (product, quantity) =>{
         const checkProductInCart = cartItems.find((item) => item._id === product._id);
@@ -51,8 +49,8 @@ export const StateContext = ( {children} ) => {
     }
 
     const onRemove = (product) => {
-        let foundProduct = cartItems.find((item) => item.id === product.id);
-        const newCartItems = cartItems.filter((item) => item.id !== foundProduct.id)
+        let foundProduct = cartItems.find((item) => item._id === product._id);
+        const newCartItems = cartItems.filter((item) => item._id !== foundProduct._id)
         
         setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
         setTotalQuantities((prevQty)=> prevQty - foundProduct.quantity)

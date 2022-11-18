@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import Grid from '@mui/material/Grid'
 import Product from './Product'
 
