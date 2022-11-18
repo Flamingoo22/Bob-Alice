@@ -9,21 +9,20 @@ import axios from 'axios';
         const { cat } = useParams()
         const [products, setProducts] = useState([]);
 
-        useEffect(() => {
-            if (cat) {
-                axios.get('http://localhost:8000/api/products/' + cat)
-                    .then((res) => {
-                        console.log(res.data)
-                        setProducts([...res.data])
-                    })
-            }
-            else {
-                axios.get('http://localhost:8000/api/product')
-                    .then((res) => {
-                        setProducts([...res.data])
-                    })
-            }
-        }, [cat]);
+    useEffect(() => {
+        if(cat){
+            axios.get('http://localhost:8000/api/products/'+cat)
+            .then((res) =>{
+                setProducts([...res.data])
+            })
+        }
+        else{
+            axios.get('http://localhost:8000/api/product')
+            .then((res) =>{
+                setProducts([...res.data])
+            })
+        }
+    }, [cat]);
 
     return (
         <div>

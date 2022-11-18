@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const OneProduct = (props) => {
-    const { onAdd } = useStateContext()
+    const { onAdd, cartItems } = useStateContext()
     const { id } = useParams();
     const [ product, setProduct ] = useState({});
 
@@ -19,7 +19,6 @@ const OneProduct = (props) => {
 
     return (
         <div>
-            {JSON.stringify(product.length)}
             <Navbar />
             {product._id && <div className='product-detail-container'>
                 <div className='product-desc'>
