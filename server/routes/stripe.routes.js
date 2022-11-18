@@ -22,14 +22,14 @@ router.post('/create-checkout-session', async (req, res) => {
                 },
                 unit_amount: item.price * 100,
             },
-            quantity: 1,
+            quantity: item.quantity,
         };
     });
 
     const session = await stripe.checkout.sessions.create({
         line_items,
         mode: 'payment',
-        success_url: 'http://localhost:3000/checkout',
+        success_url: 'http://localhost:3000/checkout/success',
         cancel_url: 'http://localhost:3000/checkout',
     });
 

@@ -4,6 +4,9 @@ const PayButton = ({ cartItems }) => {
     
 
     const handleCheckout = () => {
+        if(cartItems.length <= 0){
+            return;
+        }
         axios.post("http://localhost:8000/api/stripe/create-checkout-session", {
             cartItems,
         }).then((res) => {

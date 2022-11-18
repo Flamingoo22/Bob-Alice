@@ -6,6 +6,7 @@ import OneProduct from './views/OneProduct';
 import Checkout from './views/Checkout';
 import { StateContext } from './context/StateContext'
 import '@stripe/stripe-js'
+import CheckoutSucess from './views/CheckoutSucess';
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
               <Route path='/products/:cat' element={<Products/>}/>
               <Route path='/product/:id' element={<OneProduct/>}/>
               <Route path='/checkout' element={<Checkout/>}/>
+              <Route path='/checkout/success' element={<CheckoutSucess/>}/>
+              
           </Routes>
       </StateContext>
     </div>
