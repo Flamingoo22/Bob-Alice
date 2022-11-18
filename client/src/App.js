@@ -8,6 +8,7 @@ import { StateContext } from './context/StateContext'
 import '@stripe/stripe-js'
 import CheckoutSucess from './views/CheckoutSucess';
 
+
 function App() {
   return (
     <div className="App">
