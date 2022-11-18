@@ -5,22 +5,25 @@ import ProductTable from '../components/ProductTable';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const Products = () => {
-    const { cat } = useParams()
-    const [products, setProducts] = useState([]);
+    const Products = () => {
+        const { cat } = useParams()
+        const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        axios.get('http://localhost:8000/api/product')
-        .then((res) =>{
-            setProducts([...res.data])
-        })
-        .then((res) =>{
-            if(products.length > 0 && cat){
-                const filterProducts = products.filter(product => product.categories === cat)
-                setProducts([...filterProducts])
+        useEffect(() => {
+            if (cat) {
+                axios.get('http://localhost:8000/api/products/' + cat)
+                    .then((res) => {
+                        console.log(res.data)
+                        setProducts([...res.data])
+                    })
             }
-        })
-    }, [products, cat]);
+            else {
+                axios.get('http://localhost:8000/api/product')
+                    .then((res) => {
+                        setProducts([...res.data])
+                    })
+            }
+        }, [cat]);
 
     return (
         <div>
