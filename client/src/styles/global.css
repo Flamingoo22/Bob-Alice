@@ -52,7 +52,7 @@
 /*  view port height */
 .product-desc {
     display: flex;
-    padding: 10px;
+    padding: 20px;
     flex-direction: column;
     align-items: flex-start;
     position: fixed;
@@ -105,7 +105,8 @@
     justify-content: space-around;
     gap: 10px;
     margin: 40px;
-    color: #324d67;
+    color: #000000;
+    
 }
 
 .product-detail-img {
@@ -119,9 +120,12 @@
     align-items: flex-start;
     position: fixed;
     top: 300px;
-    /* right: 5%; */
-    right: 0;
+    right: 5%;
+    /* right: 0; */
     z-index: 0;
+    background-color: rgba(0, 0, 0, 0.235);
+    padding: 20px;
+    border-radius: 10px 10px;
 }
 
 .cart-wrapper {
@@ -269,6 +273,25 @@
     font-weight: 100;
     color: #00000097;
 }
+.checkout-product-quantity {
+    grid-column: 1;
+    grid-row: 5;
+    text-align: left;
+    font-size: 16px;
+    font-family:Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-weight: 100;
+    color: #00000097;
+}
+.checkout-product-quantity-select {
+    width: 50px;
+    border-radius:1px 1px;
+    text-align: left;
+    font-size: 16px;
+    font-family:Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-weight: 100;
+    color: #00000097;
+}
+
 .checkout-product-price {
     grid-column: -1;
     grid-row: 1;
@@ -350,6 +373,58 @@
 }
 
 
+.checkout-success-wrapper {
+    background-color: rgba(255, 255, 255, 0.765);
+    height: 100vh;
+}
+
+.checkout-success-container {
+    height: 30vh;
+    border-radius: 20px 20px;
+    margin:0% 28%;;
+    color: rgba(0, 0, 0, 0.776);
+}
+
+.checkout-success-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 25%;
+    margin-top: 1em;
+    font-weight: 600;
+}
+.icons{
+    margin: 20px 10px;
+    height: 50px;
+}
+.contributor-people {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.contributor-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contributor-name {
+    inline-size: 90px;
+    height: 62px;
+    text-align: center;
+    color: #fffdfd;
+    font-weight: 800;
+    background-color: #000000;
+    border-radius: 20px 20px;
+    padding: 10px;
+    /* z-index: -1; */
+}
+
+.contributor-header{
+    text-align: center;
+    margin-top: 2em;
+}
+
 @media screen and (max-width: 800px) {
     .product-detail-container {
         display: flex;
@@ -378,4 +453,11 @@
         position: relative;
         z-index: 100;
     }
+    .contributor-people {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+
 }

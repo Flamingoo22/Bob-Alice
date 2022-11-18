@@ -5,8 +5,9 @@ import PayButton from '../components/PayButton';
 
 
 const Checkout = () => {
-    const { cartItems, totalPrice, onRemove } = useStateContext();
-
+    const { cartItems, totalPrice, onRemove, onChangeQty } = useStateContext();
+    const count = [1,2,3,4,5,6,7,8,9];
+    const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
     return (
         <div>
             <Navbar />
@@ -24,8 +25,27 @@ const Checkout = () => {
                                     <img src={item.url[0]} className='checkout-product-img'/>
                                     <div className='checkout-product-desc'>
                                         <p className='checkout-product-name'>{item.name}</p>
-                                        <p className='checkout-product-size'>SIZE: {item.size ? item.size : 'M'}</p>
-                                        <p className='checkout-product-price'>${item.price} USD</p>
+                                        <div className='checkout-product-size'>
+                                            <label>SIZE: </label>
+                                            <select className='checkout-product-quantity-select'>
+                                                {
+                                                    sizes.map((size,i)=>{
+                                                        return <option value={size} key={i}>{size}</option>
+                                                    })
+                                                }
+                                            </select>
+                                        </div>
+                                        <div className='checkout-product-quantity'>
+                                            <label>qty: </label> 
+                                            <select className='checkout-product-quantity-select' onChange={e=>{onChangeQty(item, e.target.value)}} defaultValue={item.quantity}>
+                                                {
+                                                    count.map((num,i)=>{
+                                                        return <option value={num} key={i}>{num}</option>
+                                                    })
+                                                }
+                                            </select> 
+                                        </div>
+                                        <p className='checkout-product-price'>${item.price * item.quantity} USD</p>
                                         <button className='checkout-product-remove' onClick={()=>onRemove(item)}>Remove</button>
                                     </div>
                                 </div>

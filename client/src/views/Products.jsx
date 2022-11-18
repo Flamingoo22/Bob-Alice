@@ -10,17 +10,19 @@ const Products = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/product')
-        .then((res) =>{
-            setProducts([...res.data])
-        })
-        .then((res) =>{
-            if(products.length > 0 && cat){
-                const filterProducts = products.filter(product => product.categories === cat)
-                setProducts([...filterProducts])
-            }
-        })
-    }, [products, cat]);
+        if(cat){
+            axios.get('http://localhost:8000/api/products/'+cat)
+            .then((res) =>{
+                setProducts([...res.data])
+            })
+        }
+        else{
+            axios.get('http://localhost:8000/api/product')
+            .then((res) =>{
+                setProducts([...res.data])
+            })
+        }
+    }, [cat]);
 
     return (
         <div>
