@@ -16,11 +16,11 @@ const Products = () => {
         })
         .then((res) =>{
             if(products.length > 0 && cat){
-                const filterProducts = products.filter(product => product.category === cat)
+                const filterProducts = products.filter(product => product.categories === cat)
                 setProducts([...filterProducts])
             }
         })
-    }, [cat]);
+    }, [products, cat]);
 
     return (
         <div>
