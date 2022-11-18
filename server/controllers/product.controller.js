@@ -14,7 +14,14 @@ module.exports = {
             })
             .catch(err => res.json(err))
         },
-    
+    //Find By Categories
+    findByCategories: (req, res) => {
+        Product.find({categories:req.params.cat})
+        .then(allProducts => {
+            res.json(allProducts)
+        })
+        .catch(err => res.json(err))
+    },
     // CREATE
     create: ( req, res ) =>{
         console.log(req.body)
@@ -24,6 +31,7 @@ module.exports = {
             })
             .catch(err => res.json(err))
     },
+
 
     //READ ONE
     findOne: ( req, res ) =>{
