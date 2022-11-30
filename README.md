@@ -1,4 +1,5 @@
-# Bob-Alice
+<h1 align="center">Bob & Alice E-Commerce Web App</h1>
+<hr>
 
 ![Main_Page](https://user-images.githubusercontent.com/109699879/204870083-d3afb540-5ef3-4830-85bd-7ce79e1e92f3.jpg)
 
