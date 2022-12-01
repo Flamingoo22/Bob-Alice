@@ -3,16 +3,16 @@
 <br />
 <div align="center">
   <a href="https://github.com/Flamingoo22/Bob-Alice" name="readme-top">
-    <h1>Bob-Alice</h1>
+    <h1>Bob & Alice E-Commerce Web App</h1>
   </a>
-
+  
   <p align="center">
     An ecommerce website for fashion clothings!
     <br />
     <a href="https://github.com/Flamingoo22/Bob-Alice"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/Flamingoo22/Bob-Alice">View Demo</a>
   </p>
 </div>
 
