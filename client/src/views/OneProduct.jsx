@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const OneProduct = (props) => {
-    const { onAdd } = useStateContext()
+    const { onAdd, onChangeSize } = useStateContext()
     const { id } = useParams();
     const [ product, setProduct ] = useState({});
 
@@ -46,7 +46,7 @@ const OneProduct = (props) => {
                         {product.name}
                     </h3>
                     <p className='product-desc-price'>${product.price} USD</p>
-                    <select className='select-size'>
+                    <select className='select-size' onChange={e=>onChangeSize(product, e.target.value)}>
                         {
                             size.map((opt, i)=>{
                                 return <option key={i}>{opt}</option>

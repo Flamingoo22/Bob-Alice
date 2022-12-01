@@ -4,7 +4,7 @@ import { useStateContext } from '../context/StateContext'
 
 
 const Cart = ({ setShowCart }) => {
-    const { cartItems, onRemove, onChangeQty } = useStateContext()
+    const { cartItems, onRemove, onChangeQty, onChangeSize } = useStateContext()
 
     const count = [1,2,3,4,5,6,7,8,9];
     const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
@@ -27,7 +27,7 @@ const Cart = ({ setShowCart }) => {
                                     <p className='checkout-product-name'>{item.name}</p>
                                     <div className='checkout-product-size'>
                                         <label>SIZE: </label>
-                                        <select className='checkout-product-quantity-select'>
+                                        <select className='checkout-product-quantity-select' defaultValue={item.size} onChange={e=>{onChangeSize(item, e.target.value)}}>
                                             {
                                                 sizes.map((size,i)=>{
                                                     return <option value={size} key={i}>{size}</option>

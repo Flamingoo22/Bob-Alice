@@ -48,11 +48,24 @@ export const StateContext = ( {children} ) => {
         setCartItems(updatedCartItems);
     }
 
+    const onChangeSize = ( product, size) =>{
+        const updatedCartItems = cartItems.map((cartProduct) => {
+            if(cartProduct._id === product._id) return {
+                ...cartProduct,
+                size: size
+            }
+            else{
+                return {...cartProduct}
+            };
+        })
+        setCartItems(updatedCartItems);
+    }
+
     const onRemove = (product) => {
         let foundProduct = cartItems.find((item) => item._id === product._id);
         const newCartItems = cartItems.filter((item) => item._id !== foundProduct._id)
         
-        setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
+        setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price * product.quantity);
         setTotalQuantities((prevQty)=> prevQty - foundProduct.quantity)
         setCartItems(newCartItems);
     }
@@ -67,7 +80,8 @@ export const StateContext = ( {children} ) => {
             onRemove,
             onAdd,
             totalQuantities,
-            onChangeQty
+            onChangeQty,
+            onChangeSize
         }}
         >
             {children}
