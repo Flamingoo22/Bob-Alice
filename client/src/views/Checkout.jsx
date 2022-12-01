@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import Navbar from '../components/Navbar'
 import { useStateContext } from '../context/StateContext';
 import PayButton from '../components/PayButton';
 
 
 const Checkout = () => {
-    const { cartItems, totalPrice, onRemove, onChangeQty } = useStateContext();
+    const { cartItems, totalPrice, onRemove, onChangeQty, onChangeSize } = useStateContext();
     const count = [1,2,3,4,5,6,7,8,9];
     const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
     return (
@@ -22,12 +22,12 @@ const Checkout = () => {
                         cartItems.map((item, index)=> {
                             return(
                                 <div key={item._id} className='checkout-product-wrapper'>
-                                    <img src={item.url[0]} className='checkout-product-img'/>
+                                    <img src={item.url[0]} className='checkout-product-img' alt=''/>
                                     <div className='checkout-product-desc'>
                                         <p className='checkout-product-name'>{item.name}</p>
                                         <div className='checkout-product-size'>
                                             <label>SIZE: </label>
-                                            <select className='checkout-product-quantity-select'>
+                                            <select className='checkout-product-quantity-select' defaultValue={item.size} onChange={e=>{onChangeSize(item, e.target.value)}}>
                                                 {
                                                     sizes.map((size,i)=>{
                                                         return <option value={size} key={i}>{size}</option>
