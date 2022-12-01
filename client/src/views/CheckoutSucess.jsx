@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from '../components/Navbar';
-import { Link } from 'react-router-dom';
 
 const CheckoutSucess = () => {
     return (
@@ -20,10 +19,10 @@ const CheckoutSucess = () => {
                             <p className='contributor-name'>
                                 Yifan Qiu
                             </p>
-                            <a href="https://github.com/Flamingoo22" target='_blank'>
-                                <img src="https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png" alt="" className='icons'/>
+                            <a href="https://github.com/Flamingoo22" target='_blank' rel="noreferrer">
+                                <img src="https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png" alt="" className='icons' />
                             </a>
-                            <a href="https://www.linkedin.com/in/yifan-qiu-9813bb232/" target='_blank'>
+                            <a href="https://www.linkedin.com/in/yifan-qiu-9813bb232/" target='_blank' rel="noreferrer">
                                 <img src="https://icones.pro/wp-content/uploads/2021/03/icone-linkedin-ronde-noire.png" alt="" className='icons'/>
                             </a>
                         </div>
@@ -31,10 +30,10 @@ const CheckoutSucess = () => {
                             <p className='contributor-name'>
                                 Michael Hobson
                             </p>
-                            <a href='https://github.com/Michael-Hobson' target='_blank'>
+                            <a href='https://github.com/Michael-Hobson' target='_blank' rel="noreferrer">
                                 <img src="https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png" alt="" className='icons'/>
                             </a>
-                            <a href='https://www.linkedin.com/in/michaelghobson/' target="_blank">
+                            <a href='https://www.linkedin.com/in/michaelghobson/' target="_blank" rel="noreferrer">
                                 <img src="https://icones.pro/wp-content/uploads/2021/03/icone-linkedin-ronde-noire.png" alt="" className='icons'/>
                             </a>
                         </div>
