@@ -5,9 +5,9 @@ import ProductTable from '../components/ProductTable';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const Products = () => {
-    const { cat } = useParams()
-    const [products, setProducts] = useState([]);
+    const Products = () => {
+        const { cat } = useParams()
+        const [products, setProducts] = useState([]);
 
     useEffect(() => {
         if(cat){

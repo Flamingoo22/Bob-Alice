@@ -6,7 +6,7 @@
   </a>
   
   <p align="center">
-    An ecommerce website for fashion clothings!
+    An e-commerce website for fashion clothing!
     <br />
     <a href="https://github.com/Flamingoo22/Bob-Alice"><strong>Explore the docs »</strong></a>
     <br />
@@ -45,6 +45,16 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+<p>
+This project was created so that two new developers could work together in a collaborative way from start to finish. Prior to this, we had both worked individually on projects, but we wanted to gain experience working in tandem to receate a real-world team scenario. We also had the goal of becoming more experienced in working together within a Github repository.  
+
+As part of our ideation process, we quickly settled on an e-commerce web app. We saw tremendous value in the flexibility and scalability of that style of app, and we wanted to create something that could be the foundation for a variety of different web apps in the future. Our project was built utilizing the agile development process. This included a planning meeting, daily stand-up meetings, and the development of user stories via Trello to build out our features. The planning process also included full visual concept wireframes designed in balsamiq.
+  
+We selected a clothing app as it would be visually appealing and versatile enough for us to build universal features. The simple and clean style of the app was based off of research done on the current landscape of similar apps, and allowed for some creative useage of CSS and Material UI. The backend development incorporated the StripeAPI payment system as it is one of the more widely used APIs, and provides excellent developer tools for testing and implementation.
+  
+This full-stack MERN project was completed as part of our coding bootcamp Project Week with all work completed in six days. We were excited to present it to our cohort, and proud that the group selected the project to be one of just three presented at our graduation.
+</p>
+
 ![Main_Page](img/dashboard.gif)
 
 
@@ -57,13 +67,6 @@
 
 
 ![Confirmation_Thank_You](https://user-images.githubusercontent.com/109699879/204870316-77605e79-3467-45d1-98cf-f8153ea754d1.jpg)
-
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
-
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -157,7 +160,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 ## Contacts
 
 * Yifan Qiu - [@Linkedin](https://www.linkedin.com/in/yifan-qiu-9813bb232/) - yif.chu22@gmail.com
-* Michael Hobson - [@Linkedin](https://www.linkedin.com/in/michaelghobson/) - placeholder@email.com
+* Michael Hobson - [@Linkedin](https://www.linkedin.com/in/michaelghobson/) - mikehobson@outlook.com
 
 Project Link: [https://github.com/Flamingoo22/Bob-Alice](https://github.com/Flamingoo22/Bob-Alice)
 

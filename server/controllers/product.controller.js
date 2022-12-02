@@ -41,6 +41,18 @@ module.exports = {
             .catch(err => res.json(err))
     },
 
+    //Find By Categories
+    findByCategories: (req, res) => {
+        console.log(req.params.cat)
+        Product.find({ categories: req.params.cat })
+            .then(allProducts => {
+                console.log("******")
+                res.json(allProducts)
+            })
+            .catch(err => res.json(err))
+    },
+
+
     //UPDATE
     update: (req, res) => {
         console.log('UPDATE ID:', req.params.id)
